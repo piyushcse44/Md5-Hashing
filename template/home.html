@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashing</title>
+</head>
+<body>
+     <h1>Welcome to Hashing Website</h1>
+     <form action="" method="post">
+        {%  csrf_token %}
+        <p>Enter Plain Text</p>
+        <input type="text" name="PlainText">
+        <p>Enter Key</p>
+        <input type="text" name="key">
+        <input type="submit" name ="Encypt">
+
+
+     </form> 
+     <h1 style="text-align: center; color: red; width: 50px;">{{message}}</h1>
+</body>
+</html>
