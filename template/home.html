@@ -1,22 +1,50 @@
+{% load static    %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
     <title>Hashing</title>
 </head>
 <body>
-     <h1>Welcome to Hashing Website</h1>
+     <h1>Encrypt Your Message</h1>
      <form action="" method="post">
         {%  csrf_token %}
         <p>Enter Plain Text</p>
-        <input type="text" name="PlainText">
+        <input type="text" name="PlainText" value="{{PlainText}}">
         <p>Enter Key</p>
-        <input type="text" name="key">
+        <input type="text" name="key" value="{{key}}">
         <input type="submit" name ="Encypt">
 
 
      </form> 
-     <h1 style="text-align: center; color: red; width: 50px;">{{message}}</h1>
+     <div style="display: flex; flex-direction: row;">
+
+     <h1 >Encypted message :  <h1 style="color: red;">{{message}}</h1></h1>
+
+    </div>
+
+     {% if flag is True %}
+     <h1>Decypt Your Message</h1>
+     <form action="" method="post">
+        {%  csrf_token %}
+        <p>Enter Plain Text</p>
+        <input style="width: fit-content;" type="text" name="c" value="{{EncyptMessage}}">
+      
+        <input type="submit" name ="Decypt">
+
+
+     </form> 
+     <div style="display: flex; flex-direction: row;">
+
+     <h1 >Decypted message :  <h1 style="color: red;">{{decypt_message}}</h1></h1>
+
+      </div>
+
+     {% endif %}
+    
+
+     
 </body>
 </html>
